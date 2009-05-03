@@ -1,0 +1,583 @@
+#LyX 1.6.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass beamer
+\begin_preamble
+\usetheme{Montpellier}
+\end_preamble
+\use_default_options false
+\language english
+\inputencoding auto
+\font_roman lmodern
+\font_sans lmss
+\font_typewriter lmtt
+\font_default_family sfdefault
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 2
+\use_esint 0
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Title
+When Harry Met Iannis
+\end_layout
+
+\begin_layout Author
+M.
+ Edward (Ed) Borasky
+\end_layout
+
+\begin_layout BeginFrame
+Who Am I?
+\end_layout
+
+\begin_layout Itemize
+Mathematician / Computer Scientist
+\end_layout
+
+\begin_layout Itemize
+Computer Performance Engineer
+\end_layout
+
+\begin_layout Itemize
+Studio Composer
+\end_layout
+
+\begin_layout Itemize
+Karaoke / Folk Singer
+\end_layout
+
+\begin_layout Itemize
+Actor 
+\end_layout
+
+\begin_layout Itemize
+Etc.
+\end_layout
+
+\begin_layout BeginFrame
+Who Was Harry Partch?
+\end_layout
+
+\begin_layout Itemize
+Born 1901, died 1974
+\end_layout
+
+\begin_layout Itemize
+Composed in a 43-tone Just scale
+\end_layout
+
+\begin_layout Itemize
+Had elaborate theory behind the scale
+\end_layout
+
+\begin_layout Itemize
+Wrote theatrical pieces
+\end_layout
+
+\begin_layout Itemize
+Built his own instruments
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Genesis of a Music
+\emph default
+ (1974), Da Capo Press, New York, ISBN 0-306-80106-X
+\end_layout
+
+\begin_layout BeginFrame
+Partch Concepts in the Piece
+\end_layout
+
+\begin_layout Itemize
+The Tonality Diamond
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Otonality / Utonality
+\end_layout
+
+\begin_layout Itemize
+Numerary Nexus
+\end_layout
+
+\begin_layout Itemize
+Odentity / Udentity
+\end_layout
+
+\begin_layout Itemize
+1/1 = G 392
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Building your own instruments
+\end_layout
+
+\begin_layout BeginFrame
+Who Was Iannis Xenakis?
+\end_layout
+
+\begin_layout Itemize
+Born 1922, died 2001
+\end_layout
+
+\begin_layout Itemize
+Born in Romania, Greek parents, French citizen
+\end_layout
+
+\begin_layout Itemize
+Most famous work was the Philips Pavilion at the Brussels Worlds Fair
+\end_layout
+
+\begin_layout Itemize
+Composed for both conventional and electronic instruments
+\end_layout
+
+\begin_layout Itemize
+Mostly algorithmic composition
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Formalized Music
+\emph default
+ (1992), Pendragon Press, Stuyvesant, NY, ISBN 0-945193-24-6
+\end_layout
+
+\begin_layout BeginFrame
+Xenakis Concepts in the Piece
+\end_layout
+
+\begin_layout Itemize
+Stochastic algorithmic composition
+\end_layout
+
+\begin_layout Itemize
+Electronic instruments
+\end_layout
+
+\begin_layout BeginFrame
+Tonality Diamond for “When Harry Met Iannis”
+\end_layout
+
+\begin_layout BeginFrame
+Partch Terminology
+\end_layout
+
+\begin_layout Itemize
+A pitch is defined as a 
+\emph on
+ratio
+\emph default
+ of two numbers
+\end_layout
+
+\begin_layout Itemize
+The numerator is called the 
+\emph on
+Over
+\emph default
+ number
+\end_layout
+
+\begin_layout Itemize
+The denominator is called the 
+\emph on
+Under
+\emph default
+ number
+\end_layout
+
+\begin_layout Itemize
+1/1 has frequency 392 Hz (G below A440)
+\end_layout
+
+\begin_layout Itemize
+1/2 has frequency 196 Hz (G below A220)
+\end_layout
+
+\begin_layout Itemize
+Etc.
+\end_layout
+
+\begin_layout BeginFrame
+Conventions
+\end_layout
+
+\begin_layout Itemize
+Differs from the version in 
+\emph on
+Genesis of a Music
+\emph default
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+“lower octave” is pitches 
+\emph on
+below
+\emph default
+ G 392!
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Over or under number is multiplied by powers of two to place pitch in the
+ desired octave
+\end_layout
+
+\begin_layout Itemize
+Ratios are reduced to lowest terms
+\end_layout
+
+\begin_layout Itemize
+The numbers 1, 9, 5, 11, 3, 7 are called 
+\emph on
+Identities
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Otonalities
+\emph default
+ go up to the right between solid lines
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Pitches increase in frequency
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\emph on
+Utonalities
+\emph default
+ go up to the left between dotted lines
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Pitches decrease in frequency
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+Otonality
+\end_layout
+
+\begin_layout Itemize
+An 
+\emph on
+Otonality
+\emph default
+ is a collection of pitches with a common 
+\emph on
+Under
+\emph default
+ number
+\end_layout
+
+\begin_layout Itemize
+This Under number is called the 
+\emph on
+Numerary Nexus
+\end_layout
+
+\begin_layout Itemize
+The 
+\emph on
+Over
+\emph default
+ numbers are called 
+\emph on
+Odentities
+\end_layout
+
+\begin_layout Itemize
+Corresponds to a “major” key in conventional notation
+\end_layout
+
+\begin_layout Itemize
+Six Otonalities in the diamond, going upwards in pitch
+\end_layout
+
+\begin_layout BeginFrame
+Utonality
+\end_layout
+
+\begin_layout Itemize
+A 
+\emph on
+Utonality
+\emph default
+ is a collection of pitches with a common 
+\emph on
+Over
+\emph default
+ number
+\end_layout
+
+\begin_layout Itemize
+This Over number is called the 
+\emph on
+Numerary Nexus
+\end_layout
+
+\begin_layout Itemize
+The 
+\emph on
+Under
+\emph default
+ numbers are called 
+\emph on
+Udentities
+\end_layout
+
+\begin_layout Itemize
+Corresponds to a “minor” key in conventional notation
+\end_layout
+
+\begin_layout Itemize
+Six Utonalities in the diamond, going downwards in pitch
+\end_layout
+
+\begin_layout BeginFrame
+Coding of Chords in “When Harry Met Iannis”
+\end_layout
+
+\begin_layout Itemize
+The piece consists of a sequence of chords from the diamond
+\end_layout
+
+\begin_layout Itemize
+A chord has four components:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Otonality/Utonality switch: +1 = O, -1 = U
+\end_layout
+
+\begin_layout Itemize
+Octave multiplier relative to G 392
+\end_layout
+
+\begin_layout Itemize
+Numerary Nexus
+\end_layout
+
+\begin_layout Itemize
+List of Identities
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+Stochastic Composition
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Stochastic
+\emph default
+ means that it has random elements
+\end_layout
+
+\begin_layout Itemize
+Any or all elements of a stochastic composition may be random
+\end_layout
+
+\begin_layout Itemize
+Examples go back to Mozart’s time, using dice
+\end_layout
+
+\begin_layout Itemize
+Modern stochastic composition using computers started in the late 1950s
+ / early 1960s by Hiller, Isaacson and Xenakis
+\end_layout
+
+\begin_layout BeginFrame
+Structure of “When Harry Met Iannis”
+\end_layout
+
+\begin_layout Itemize
+The piece starts with the full six-pitch chord (hexad) in the Otonality
+ with Numerary Nexus 1
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Bottom Otonality in the diamond
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Each successive chord is generated by a random transformation of the preceding
+ chord
+\end_layout
+
+\begin_layout Itemize
+Durations of the chords are generated at random
+\end_layout
+
+\begin_layout BeginFrame
+Major Transformations
+\end_layout
+
+\begin_layout Itemize
+Flip the Otonality / Utonality switch
+\end_layout
+
+\begin_layout Itemize
+Go up or down an octave
+\end_layout
+
+\begin_layout Itemize
+Replace the Numerary Nexus with one of the other five
+\end_layout
+
+\begin_layout Itemize
+Add or delete one of the Identities
+\end_layout
+
+\begin_layout BeginFrame
+Octave Jumps
+\end_layout
+
+\begin_layout Itemize
+Pick a direction (
+\emph on
+up
+\emph default
+ or 
+\emph on
+down
+\emph default
+) at random
+\end_layout
+
+\begin_layout Itemize
+If the new octave would be too high or too low, go the other way
+\end_layout
+
+\begin_layout Itemize
+Random walk with reflecting barriers
+\end_layout
+
+\begin_layout BeginFrame
+Adding / Deleting Identities
+\end_layout
+
+\begin_layout Itemize
+Choose 
+\emph on
+add
+\emph default
+ or 
+\emph on
+delete
+\emph default
+ at random
+\end_layout
+
+\begin_layout Itemize
+If the new list would have too few or too many, do the other one
+\end_layout
+
+\begin_layout Itemize
+If adding, add one that isn’t already there at random
+\end_layout
+
+\begin_layout Itemize
+If dropping, delete one at random
+\end_layout
+
+\begin_layout BeginFrame
+Final Chord Generation
+\end_layout
+
+\begin_layout Itemize
+One of the Identities is chosen at random as the “root” of the chord
+\end_layout
+
+\begin_layout Itemize
+This “root” is placed in the octave between 1/1 and 2/1 for an Otonality
+ and between 1/2 and 1/1 for a Utonality
+\end_layout
+
+\begin_layout Itemize
+The rest of the pitches in the chord are placed in the octave up from the
+ root for an Otonality and down from the root for a Utonality
+\end_layout
+
+\begin_layout Itemize
+The whole chord is then transposed according to the octave multiplier
+\end_layout
+
+\begin_layout BeginFrame
+Where We Are
+\end_layout
+
+\begin_layout Itemize
+What we’ve described so far is the composition process
+\end_layout
+
+\begin_layout Itemize
+Implemented as a Perl script
+\end_layout
+
+\begin_layout Itemize
+Output is a score for a computer sound generation language
+\end_layout
+
+\begin_layout Itemize
+Could be modified to produce scores for other instruments, MIDI with pitch
+ bends, etc.
+\end_layout
+
+\begin_layout BeginFrame
+
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\end_body
+\end_document
