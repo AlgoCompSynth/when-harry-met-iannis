@@ -4,4 +4,5 @@ Edit mode and non-edit mode
 Edit mode shows a finger
 Float is a floating point number
 Left inlet is hot, right inlets are cold
+Position of inlets and outlets in a subpatch define how it works on the box
 
