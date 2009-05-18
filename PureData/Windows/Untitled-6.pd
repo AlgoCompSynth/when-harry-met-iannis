@@ -1,0 +1,10 @@
+#N canvas 357 214 450 300 16;
+#X obj 147 158 soundfiler;
+#X obj 140 62 openpanel;
+#X msg 141 110 read -resize \$1 jason;
+#X obj 140 24 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 262 18 table jason;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 3 0 1 0;
