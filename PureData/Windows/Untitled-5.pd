@@ -1,13 +1,13 @@
-#N canvas 45 27 1280 734 16;
-#X obj 422 134 table toast;
-#X obj 343 419 tabread~ toast;
-#X obj 344 365 *~ 100;
-#X obj 345 303 phasor~;
-#X obj 345 240 mtof;
-#X obj 348 206 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 7600 1;
-#X obj 345 564 dac~;
-#X obj 344 470 *~ 0.1;
+#N canvas 5 8 656 690 16;
+#X obj 30 20 table toast;
+#X obj 38 373 tabread~ toast;
+#X obj 39 305 *~ 100;
+#X obj 39 234 phasor~;
+#X obj 39 165 mtof;
+#X obj 42 70 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 2000 1;
+#X obj 38 512 dac~;
+#X obj 39 455 *~ 0.1;
 #X connect 1 0 7 0;
 #X connect 2 0 1 0;
 #X connect 3 0 2 0;
