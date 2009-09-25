@@ -1,0 +1,19 @@
+#! /bin/bash -v
+sudo zypper install -yl DR-Csound
+sudo zypper install -yl cabel
+sudo zypper install -yl cabel-xBasic
+sudo zypper install -yl cecilia
+sudo zypper install -yl csound
+sudo zypper install -yl csound-dssi
+sudo zypper install -yl csound-fluidsynth
+sudo zypper install -yl csound-gui
+sudo zypper install -yl csound-jack
+sudo zypper install -yl csound-java
+sudo zypper install -yl csound-javadoc
+sudo zypper install -yl csound-manual
+sudo zypper install -yl csound-osc
+sudo zypper install -yl csound-python
+sudo zypper install -yl csound-tk
+sudo zypper install -yl csound-tutorial
+sudo zypper install -yl strasheela-csound
+sudo zypper install -yl xenharmonics
