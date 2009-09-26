@@ -22,5 +22,6 @@ sudo zypper install -yl zenmap
 sudo zypper install -yl wireshark
 sudo zypper install -yl vsftpd lftp ncftp yast2-ftp-server
 sudo zypper install -yl git git-gui gitk
+sudo zypper install -yl R-base R-base-devel
 
 echo 'Now set up NTP and bootloader, shut down and snapshot.'
