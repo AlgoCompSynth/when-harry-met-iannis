@@ -17,5 +17,4 @@ sudo zypper install -yl csound-tk
 sudo zypper install -yl csound-tutorial
 sudo zypper install -yl strasheela-csound
 sudo zypper install -yl xenharmonics
-sudo zypper install -yl pd
 sudo zypper install -yl supercollider
