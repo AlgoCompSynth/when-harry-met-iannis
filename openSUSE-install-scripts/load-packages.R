@@ -1,0 +1,26 @@
+chooseCRANmirror()
+setRepositories()
+update.packages(ask=FALSE)
+install.packages(c(
+  "myrrh",
+  "animation",
+  "audio",
+  "brainwaver",
+  "nlt",
+  "rgl",
+  "rpanel",
+  "Rwave",
+  "rwt",
+  "seewave",
+  "signal",
+  "signalextraction",
+  "SpherWave",
+  "sound",
+  "tcltk2",
+  "tuneR",
+  "unbalhaar",
+  "waved",
+  "wavelets",
+  "waveslim",
+  "wavethresh"
+))
