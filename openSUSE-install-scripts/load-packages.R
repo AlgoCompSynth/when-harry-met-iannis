@@ -4,6 +4,7 @@ update.packages(ask=FALSE)
 install.packages(c(
   "animation",
   "audio",
+  "pastecs",
   "rgl",
   "rpanel",
   "seewave",
