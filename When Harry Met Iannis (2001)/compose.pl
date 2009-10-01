@@ -1,4 +1,4 @@
-
+#! /usr/bin/perl -w
 # compose.pl
 # compose SASL score for "When Harry Met Iannis"
 # M. Edward Borasky, Borasky Research, 28 October 2001
@@ -17,13 +17,20 @@
 # are the Identities (Odentities for an Otonality and Udentities for a
 # Utonality).
 
+# so
+
+#@chord = (1, 1, 1, 1, 3, 5, 7, 9, 11, 13); # initial chord
+
+# is an Otonality in octave 1 with Numerary Nexus (denominator) 1 and 
+# Odentities 1, 3, 5, 7, 9, 11, and 13.
+
 # The piece starts with the full Otonality chord on 1/1 = G 392 Hz.
 # Then, each successive chord is derived by a randomly-chosen
 # transformation. The possible transformations are:
 
-# 1. Toggle the Otonality / Utonality selector.
+# 1. Toggle the Otonality / Utonality selector, leaving all else fixed.
 
-# 2. Go up or down one octave, with boundaries.
+# 2. Go up or down one octave, with reflecting boundaries.
 
 # 3. Change the Numerary Nexus to one of the others.
 
