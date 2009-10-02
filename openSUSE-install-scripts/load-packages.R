@@ -5,6 +5,7 @@ install.packages(c(
   "Rcmdr",
   "animation",
   "audio",
+  "pastecs",
   "rgl",
   "rpanel",
   "seewave",

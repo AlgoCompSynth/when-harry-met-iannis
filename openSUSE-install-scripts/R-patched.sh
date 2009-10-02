@@ -10,6 +10,7 @@ sudo zypper install -y swig swig-doc swig-examples
 sudo zypper install -y graphviz graphviz-devel graphviz-doc
 sudo zypper install -y unixODBC-devel
 sudo zypper install -y -t pattern technical_writing
+sudo zypper install -y portaudio portaudio-devel
 #zypper install -y yacas yacas-devel yacas-doc
 
 # install and remove from Education repo to get any dependencies we missed

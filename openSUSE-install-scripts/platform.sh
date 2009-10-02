@@ -1,8 +1,7 @@
 #! /bin/bash -v
 
 # now update to latest software
-sudo zypper modifyrepo --no-refresh --all
-sudo zypper repos -d
+zypper repos -d
 sudo zypper refresh
 sudo zypper update
 
@@ -22,8 +21,7 @@ sudo zypper install -yl zenmap
 sudo zypper install -yl wireshark
 sudo zypper install -yl vsftpd lftp ncftp yast2-ftp-server
 sudo zypper install -yl git git-gui gitk
-sudo zypper install -yl R-base R-base-devel
-sudo zypper install -yl portaudio portaudio-devel
-sudo zypper install -yl flac flac-devel
+sudo zypper install -yl R-base R-base-devel ggobi
+sudo zypper install -yl lyx
 
 echo 'Now set up NTP and bootloader, shut down and snapshot.'
