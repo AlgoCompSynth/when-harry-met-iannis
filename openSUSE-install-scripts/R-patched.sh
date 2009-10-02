@@ -34,7 +34,7 @@ export R_PAPERSIZE='letter'
   --with-tcltk --with-cairo --with-libpng --with-jpeglib --with-x
 
 # gather stats
-iostat -cmdtx 2 999999 > R-compile-iostat.log &
+iostat -cmdtx 2 > R-compile-iostat.log &
 make -j3
 kill %1
 make pdf
