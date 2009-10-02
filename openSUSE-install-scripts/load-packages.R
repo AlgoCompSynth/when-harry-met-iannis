@@ -2,6 +2,7 @@ chooseCRANmirror()
 setRepositories()
 update.packages(ask=FALSE)
 install.packages(c(
+  "Rcmdr",
   "animation",
   "audio",
   "rgl",
@@ -12,3 +13,6 @@ install.packages(c(
   "tcltk2",
   "tuneR"
 ))
+
+# execute R Commander to get the dependencies installed
+library(Rcmdr)
