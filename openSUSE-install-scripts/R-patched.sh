@@ -1,21 +1,12 @@
 #! /bin/bash -v
 
 # dependencies
-sudo zypper install -y gcc-fortran # R packages need this
-sudo zypper install -y gd-devel # R packages
-sudo zypper install -y freeglut-devel # R packages
-sudo zypper install -y libcurl-devel # R packages
-sudo zypper install -y gsl gsl-devel
-sudo zypper install -y swig swig-doc swig-examples
-sudo zypper install -y graphviz graphviz-devel graphviz-doc
-sudo zypper install -y unixODBC-devel
+sudo zypper install -y -t pattern devel_basis
+sudo zypper install -y -t pattern devel_tcl
 sudo zypper install -y -t pattern technical_writing
-sudo zypper install -y portaudio portaudio-devel
-#zypper install -y yacas yacas-devel yacas-doc
-
-# install and remove from Education repo to get any dependencies we missed
-sudo zypper install -y R-base R-base-devel
-sudo zypper remove -y R-base R-base-devel
+sudo zypper install -y gcc-fortran # R packages need this
+sudo zypper install -y readline-devel
+#sudo zypper install -y portaudio portaudio-devel
 
 export CFLAGS='-O3 -march=native -g -pipe'
 export FFLAGS='-O3 -march=native -g -pipe'
@@ -35,9 +26,7 @@ export R_PAPERSIZE='letter'
   --with-tcltk --with-cairo --with-libpng --with-jpeglib --with-x
 
 # gather stats
-iostat -cmdtx 2 > R-compile-iostat.log &
-make -j3
-kill %1
+make
 make pdf
 sudo make install
 cd ..
