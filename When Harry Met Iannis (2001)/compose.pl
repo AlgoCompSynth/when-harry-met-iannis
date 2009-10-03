@@ -279,7 +279,7 @@ sub render { # actually play the piece
 		"sfront -fixedseed ${mp4file} ${wavfile} ${orcfile} ${scofile}";
 	system ("${command}"); # compile orchestra and score
 	system ("gcc -O3 sa.c -lm -o sa"); # compile the sfront output
-	system ("sa"); # generate the WAV
+	system ("./sa"); # generate the WAV
 
 	# now play the "wav" if the right OS is present
 	system ("start HarryIannis.wav") if $Config{'osname'} eq "MSWin32";
