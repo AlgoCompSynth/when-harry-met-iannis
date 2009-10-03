@@ -4,9 +4,10 @@
 sudo zypper install -y -t pattern devel_basis
 sudo zypper install -y -t pattern devel_tcl
 sudo zypper install -y -t pattern technical_writing
-sudo zypper install -y gcc-fortran # R packages need this
+sudo zypper install -y gcc-fortran
 sudo zypper install -y readline-devel
-#sudo zypper install -y portaudio portaudio-devel
+sudo zypper install -y freeglut-devel
+sudo zypper install -y portaudio portaudio-devel
 
 export CFLAGS='-O3 -march=native -g -pipe'
 export FFLAGS='-O3 -march=native -g -pipe'
@@ -25,10 +26,15 @@ export R_PAPERSIZE='letter'
   --enable-BLAS-shlib --enable-R-shlib --enable-R-static-lib \
   --with-tcltk --with-cairo --with-libpng --with-jpeglib --with-x
 
-# gather stats
 make
 make pdf
 sudo make install
 cd ..
 sudo /sbin/ldconfig
 sudo R CMD javareconf
+
+# update packages by hand
+sudo R
+
+# now make a local library ;-)
+R --vanilla --slave < load-packages.R 2>&1 | tee load-packages.R
