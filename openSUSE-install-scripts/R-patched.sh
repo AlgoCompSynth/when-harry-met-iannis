@@ -10,6 +10,7 @@ sudo zypper install -yl acroread
 sudo zypper install -y -t pattern devel_basis
 sudo zypper install -y -t pattern devel_tcl
 sudo zypper install -y -t pattern technical_writing
+sudo zypper install -y lyx
 sudo zypper install -y gcc-fortran
 sudo zypper install -y readline-devel
 sudo zypper install -y freeglut-devel
