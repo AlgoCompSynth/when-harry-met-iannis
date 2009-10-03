@@ -1,6 +1,12 @@
 #! /bin/bash -v
 
+# updates
+zypper repos -d
+sudo zypper refresh
+sudo zypper update
+
 # dependencies
+sudo zypper install -yl acroread
 sudo zypper install -y -t pattern devel_basis
 sudo zypper install -y -t pattern devel_tcl
 sudo zypper install -y -t pattern technical_writing
