@@ -1,4 +1,4 @@
-#! /usr/bin/perl -w
+#! /usr/bin/perl
 # compose.pl
 # compose SASL score for "When Harry Met Iannis"
 # M. Edward Borasky, Borasky Research, 28 October 2001
@@ -38,6 +38,7 @@
 # Identities in all chords.
 
 # initialization
+system("sudo zypper install sox"); # make sure player is installed
 use Config; # used later when we play the output "wav" file 
 &openLog; # open the log output file
 &openScore; # open the score output file
