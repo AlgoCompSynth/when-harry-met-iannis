@@ -1,6 +1,3 @@
-chooseCRANmirror()
-setRepositories()
-update.packages(ask=FALSE)
 install.packages(c(
   "animation",
   "audio",
@@ -10,6 +7,5 @@ install.packages(c(
   "seewave",
   "signal",
   "sound",
-  "tcltk2",
   "tuneR"
 ))
