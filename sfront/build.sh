@@ -1,4 +1,7 @@
 #! /bin/bash -v
+zypper repos -d
+sudo zypper refresh
+sudo zypper update
 sudo zypper install -t pattern devel_basis
 rm -fr sfront*
 wget http://www.cs.berkeley.edu/~lazzaro/sa/sfront.tar.gz
