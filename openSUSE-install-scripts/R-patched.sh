@@ -37,4 +37,4 @@ sudo R CMD javareconf
 sudo R
 
 # now make a local library ;-)
-R --vanilla --slave < load-packages.R 2>&1 | tee load-packages.R
+R
