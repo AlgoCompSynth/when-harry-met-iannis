@@ -6,9 +6,10 @@ sudo zypper refresh
 sudo zypper update
 
 # utilities
-sudo zypper install -yl portaudio portaudio-devel
-sudo zypper install -yl flac flac-devel
-sudo zypper install -yl timidity
-sudo zypper install -yl audacity
-sudo zypper install -yl rosegarden4
-sudo zypper install -yl lilypond
+sudo zypper install portaudio portaudio-devel
+sudo zypper install flac flac-devel
+sudo zypper install timidity
+sudo zypper install audacity
+sudo zypper install rosegarden4
+sudo zypper install lilypond
+sudo zypper install alsa-tools-gui
