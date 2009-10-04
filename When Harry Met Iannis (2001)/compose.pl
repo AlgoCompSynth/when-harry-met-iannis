@@ -44,21 +44,17 @@ use Config; # used later when we play the output "wav" file
 &openScore; # open the score output file
 &openDurations; # open the durations input file
 @identlist = (1, 3, 5, 7, 9, 11, 13); # list of identities
-$nidents = scalar(identlist); # number of identities
+$nidents = $#identlist + 1; # number of identities
 @chord = (1, 1, 1, 1, 3, 5, 7, 9, 11, 13); # initial chord
 $clock = 0; # current time
-$piecelength = 240; # how long is the piece?
+$piecelength = 300; # how long is the piece?
 $hioctave = 4; # upper octave boundary
 $looctave = 2; # lower octave boundary
 $hichord = $nidents; # maximum notes in a chord
 $lochord = 3; # minimum notes in a chord
 
 # main loop
-$halftime = $piecelength/2; # go halfway at random
-@chords = (); # chord stack
-
-while (1) { # exit with "last" at halftime
-  push(@chords, @chord); # save chord
+while (1) { # exit with "last" at end of piece		
 	if (-e $durationfile) { # is there a file?
 		$duration = <DURATIONS>; # grab a line	
 		$duration += 0; # force numeric
@@ -70,26 +66,9 @@ while (1) { # exit with "last" at halftime
 	print LOG "${clock} ${duration} @{chord}\n"; # debug output
 	&generateScore (@chord); # generate the SASL for the chord
 	$clock += $duration; # advance the clock
-	last if $clock > $halftime; # time to reverse
+	last if $clock > $piecelength; # stop the music!
 	@chord = &transform (@chord); # transform the chord
 }
-
-while (1) { # exit with "last" when stack is empty
-  @chord = pop(@chords); # grab the top of the stack
-	if (-e $durationfile) { # is there a file?
-		$duration = <DURATIONS>; # grab a line	
-		$duration += 0; # force numeric
-	}	
-	else { # generate a duration at random
-		$duration = 1/4 + rand (1 + 3/4);
-	}	
-	print "${clock} ${duration} @{chord}\n"; # debug output
-	print LOG "${clock} ${duration} @{chord}\n"; # debug output
-	&generateScore (@chord); # generate the SASL for the chord
-	$clock += $duration; # advance the clock
-	last if scalar(@chords) < 1; # stop the music!
-}
-
 &closeDurations; # close the duration file
 &closeScore; # close the score file
 &closeLog; # close the log file
