@@ -15,6 +15,7 @@ sudo zypper install -y gcc-fortran
 sudo zypper install -y readline-devel
 sudo zypper install -y freeglut-devel
 sudo zypper install -y portaudio portaudio-devel
+sudo zypper install -y unixODBC unixODBC-devel
 
 export CFLAGS='-O3 -march=native -g -pipe'
 export FFLAGS='-O3 -march=native -g -pipe'

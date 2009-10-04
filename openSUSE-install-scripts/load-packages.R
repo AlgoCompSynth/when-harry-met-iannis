@@ -1,4 +1,5 @@
 install.packages(c(
+  "Rcmdr",
   "animation",
   "audio",
   "pastecs",
@@ -9,3 +10,4 @@ install.packages(c(
   "sound",
   "tuneR"
 ))
+library(Rcmdr)
