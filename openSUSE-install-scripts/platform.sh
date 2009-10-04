@@ -15,13 +15,11 @@ sudo zypper install -yl gvim vim-enhanced vim-data
 sudo zypper install -yl lynx
 sudo zypper install -yl acroread
 sudo zypper install -yl oprofile systemtap blktrace
-sudo zypper install -yl sysstat
+sudo zypper install -yl sysstat sysstat-isag
 sudo zypper install -yl cpufrequtils
 sudo zypper install -yl zenmap
 sudo zypper install -yl wireshark
 sudo zypper install -yl vsftpd lftp ncftp yast2-ftp-server
 sudo zypper install -yl git git-gui gitk
-sudo zypper install -yl R-base R-base-devel ggobi
-sudo zypper install -yl lyx
 
 echo 'Now set up NTP and bootloader, shut down and snapshot.'
