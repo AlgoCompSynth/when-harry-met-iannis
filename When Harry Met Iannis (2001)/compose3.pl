@@ -45,16 +45,16 @@ use Config; # used later when we play the output "wav" file
 &openDurations; # open the durations input file
 @identlist = (1, 3, 5, 7, 9, 11, 13); # list of identities
 $nidents = $#identlist + 1; # number of identities
-@chord = (1, 3, 1, 1, 3, 5, 7, 9, 11); # initial chord
+@chord = (1, 3, 1, 1, 3, 5, 7, 9); # initial chord
 $clock = 0; # current time
-$piecelength = 150; # how long is the piece?
+$piecelength = 300; # how long is the piece?
 #$hioctave = 4; # upper octave boundary
 $hioctave = 5; # upper octave boundary
 #$looctave = 2; # lower octave boundary
 $looctave = 3; # lower octave boundary
 #$hichord = $nidents; # maximum notes in a chord
-$hichord = $nidents - 1; # maximum notes in a chord
-$lochord = 3; # minimum notes in a chord
+$hichord = 5; # maximum notes in a chord
+$lochord = 2; # minimum notes in a chord
 $basefreq = 2*392/3; # base frequency of 1/1
 
 # main loop
