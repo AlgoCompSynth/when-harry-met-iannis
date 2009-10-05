@@ -67,15 +67,18 @@ while (1) { # exit with "last" at end of piece
     $duration = 1/6 + rand (5/6);
   }
   $probsound = &probfunc($clock, $piecelength);
-  print "probsound = ${probsound}\n";
   if (rand(1) < $probsound) { # are we sounding?
     print "${clock} ${duration} @{chord}\n"; # debug output
     print LOG "${clock} ${duration} @{chord}\n"; # debug output
     &generateScore (@chord); # generate the SASL for the chord
+    @chord = &transform (@chord); # transform the chord
+  }
+  else {
+    print "${clock} ${duration} silence\n"; # debug output
+    print LOG "${clock} ${duration} silence\n"; # debug output
   }
   $clock += $duration; # advance the clock
   last if $clock > $piecelength; # stop the music!
-  @chord = &transform (@chord); # transform the chord
 }
 &closeDurations; # close the duration file
 &closeScore; # close the score file
