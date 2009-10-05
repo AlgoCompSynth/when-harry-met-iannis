@@ -43,16 +43,19 @@ use Config; # used later when we play the output "wav" file
 &openLog; # open the log output file
 &openScore; # open the score output file
 &openDurations; # open the durations input file
-@identlist = (1, 3, 5, 7, 9); # list of identities
+@identlist = (1, 3, 5, 7, 9, 11, 13); # list of identities
 $nidents = $#identlist + 1; # number of identities
-@chord = (1, 1, 1, 1, 3, 5, 7, 9); # initial chord
+@chord = (1, 1, 1, 1, 3, 5, 7, 9, 11); # initial chord
 $clock = 0; # current time
-$piecelength = 300; # how long is the piece?
-$hioctave = 4; # upper octave boundary
-$looctave = 2; # lower octave boundary
-$hichord = $nidents; # maximum notes in a chord
-$lochord = 1; # minimum notes in a chord
-$basefreq = 392; # base frequency of 1/1
+$piecelength = 150; # how long is the piece?
+#$hioctave = 4; # upper octave boundary
+$hioctave = 5; # upper octave boundary
+#$looctave = 2; # lower octave boundary
+$looctave = 3; # lower octave boundary
+#$hichord = $nidents; # maximum notes in a chord
+$hichord = $nidents - 1; # maximum notes in a chord
+$lochord = 3; # minimum notes in a chord
+$basefreq = 2*392/3; # base frequency of 1/1
 
 # main loop
 while (1) { # exit with "last" at end of piece    
@@ -61,10 +64,11 @@ while (1) { # exit with "last" at end of piece
     $duration += 0; # force numeric
   }  
   else { # generate a duration at random
-    $duration = 1/8 + rand (3/8);
+    $duration = 3/8 + rand (9/8);
   }
   $probsound = &probfunc($clock, $piecelength);
-  if (rand(1) < $probsound) { # are we sounding?
+  #if (rand(1) < $probsound) { # are we sounding?
+  if (1) { # are we sounding?
     print "${clock} ${duration} @{chord}\n"; # debug output
     print LOG "${clock} ${duration} @{chord}\n"; # debug output
     &generateScore (@chord); # generate the SASL for the chord
@@ -84,7 +88,7 @@ while (1) { # exit with "last" at end of piece
 exit; # we're outta here!
 
 sub openLog { # open the duration file
-  open (LOG, "> HarryIannis1.log");
+  open (LOG, "> HarryIannis3.log");
 }
 
 sub openDurations { # open the duration file
@@ -93,7 +97,7 @@ sub openDurations { # open the duration file
 }
 
 sub openScore { # open the score file
-  open (SCORE, "> HarryIannis1.sasl");
+  open (SCORE, "> HarryIannis3.sasl");
   print SCORE "0 tempo 60\n";  # 1 beat = 1 second; makes stuff easy
 }
 
@@ -119,8 +123,8 @@ sub transform { # make a random transformation
   @idents = @_; # the Identities
 
   $majorcase = int (rand (4)); # major case number
-  #&OUSwitch if $majorcase == 0; # switch from O to U or vice versa
-  &octave if $majorcase == 0; # switch from O to U or vice versa
+  &OUSwitch if $majorcase == 0; # switch from O to U or vice versa
+  #&octave if $majorcase == 0; # switch from O to U or vice versa
   &octave if $majorcase == 1; # up or down an octave
   &nexus if $majorcase == 2; # pick a new Numerary Nexus
   &idents if $majorcase == 3; # add or drop an Identity
@@ -281,10 +285,10 @@ sub between { # adjust a ratio so it lies between two limits
 }
 
 sub render { # actually play the piece
-  my ($orcfile) = "-orc HarryIannis1.saol";
-  my ($scofile) = "-sco HarryIannis1.sasl";
-  my ($wavfile) = "-aout HarryIannis1.wav";
-  my ($mp4file) = "-bitout HarryIannis1.mp4";
+  my ($orcfile) = "-orc HarryIannis3.saol";
+  my ($scofile) = "-sco HarryIannis3.sasl";
+  my ($wavfile) = "-aout HarryIannis3.wav";
+  my ($mp4file) = "-bitout HarryIannis3.mp4";
   my ($command) =
     "sfront -fixedseed ${mp4file} ${wavfile} ${orcfile} ${scofile}";
   system ("${command}"); # compile orchestra and score
@@ -292,8 +296,8 @@ sub render { # actually play the piece
   system ("./sa"); # generate the WAV
 
   # now play the "wav" if the right OS is present
-  #system ("start HarryIannis1.wav") if $Config{'osname'} eq "MSWin32";
-  #system ("play HarryIannis1.wav") if $Config{'osname'} eq "linux";
+  #system ("start HarryIannis3.wav") if $Config{'osname'} eq "MSWin32";
+  #system ("play HarryIannis3.wav") if $Config{'osname'} eq "linux";
   # add others here if desired
 }
 
