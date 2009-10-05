@@ -45,7 +45,7 @@ use Config; # used later when we play the output "wav" file
 &openDurations; # open the durations input file
 @identlist = (1, 3, 5, 7, 9, 11, 13); # list of identities
 $nidents = $#identlist + 1; # number of identities
-@chord = (1, 1, 1, 1, 3, 5, 7, 9, 11); # initial chord
+@chord = (1, 3, 1, 1, 3, 5, 7, 9, 11); # initial chord
 $clock = 0; # current time
 $piecelength = 150; # how long is the piece?
 #$hioctave = 4; # upper octave boundary
