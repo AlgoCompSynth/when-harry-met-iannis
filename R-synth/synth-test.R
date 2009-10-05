@@ -1,6 +1,14 @@
 # load library
 library(seewave)
 
+s <- stereo(Sine(440,1),Sine(330,1))
+play(s)
+play(panorama(s,30))  # now right and left tones are closer to the center
+play(panorama(s,10))  # now even closer
+play(panorama(s,0))   # now both at the center, the same as setChannels(s,1)
+play(panorama(s,-30)) # again wider, but both sides switched
+play(panorama(s,-50)) # the same as mirror(s)
+
 # play the data files
 data(orni)
 spectro(orni, f=22050, osc=TRUE, listen=TRUE)
@@ -17,6 +25,12 @@ savewav(sheep, f=8000)
 data(tico)
 spectro(tico, f=22050, osc=TRUE, listen=TRUE)
 savewav(tico, f=22050)
+
+pellucens=loadSample("pellucens.wav")
+sheep=loadSample("sheep.wav")
+orni=loadSample("orni.wav")
+peewit=loadSample("peewit.wav")
+tico=loadSample("tico.wav")
 
 # call the song of Oecanthus pellucens coming attached to Seewave
 data(pellucens)
