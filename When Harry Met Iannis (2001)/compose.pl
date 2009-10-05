@@ -38,7 +38,7 @@
 # Identities in all chords.
 
 # initialization
-system("sudo zypper install sox"); # make sure player is installed
+#system("sudo zypper install sox"); # make sure player is installed
 use Config; # used later when we play the output "wav" file 
 &openLog; # open the log output file
 &openScore; # open the score output file
@@ -49,11 +49,12 @@ $nidents = $#identlist + 1; # number of identities
 #@chord = (1, 1, 1, 1, 3, 5, 7, 9, 11, 13); # initial chord
 @chord = (1, 1, 1, 1, 3, 5, 7, 9, 11); # initial chord
 $clock = 0; # current time
-$piecelength = 180; # how long is the piece?
+$piecelength = 300; # how long is the piece?
 $hioctave = 4; # upper octave boundary
 $looctave = 2; # lower octave boundary
 $hichord = $nidents; # maximum notes in a chord
 $lochord = 3; # minimum notes in a chord
+$probsound = 0.5; # probability that a chord will sound
 
 # main loop
 while (1) { # exit with "last" at end of piece    
@@ -64,10 +65,14 @@ while (1) { # exit with "last" at end of piece
   else { # generate a duration at random
     #$duration = 1/4 + rand (7/4);
     $duration = 1/6 + rand (5/6);
-  }  
-  print "${clock} ${duration} @{chord}\n"; # debug output
-  print LOG "${clock} ${duration} @{chord}\n"; # debug output
-  &generateScore (@chord); # generate the SASL for the chord
+  }
+  $probsound = &probfunc($clock, $piecelength);
+  print "probsound = ${probsound}\n";
+  if (rand(1) < $probsound) { # are we sounding?
+    print "${clock} ${duration} @{chord}\n"; # debug output
+    print LOG "${clock} ${duration} @{chord}\n"; # debug output
+    &generateScore (@chord); # generate the SASL for the chord
+  }
   $clock += $duration; # advance the clock
   last if $clock > $piecelength; # stop the music!
   @chord = &transform (@chord); # transform the chord
@@ -286,8 +291,24 @@ sub render { # actually play the piece
   system ("./sa"); # generate the WAV
 
   # now play the "wav" if the right OS is present
-  system ("start HarryIannis.wav") if $Config{'osname'} eq "MSWin32";
-  system ("play HarryIannis.wav") if $Config{'osname'} eq "linux";
+  #system ("start HarryIannis.wav") if $Config{'osname'} eq "MSWin32";
+  #system ("play HarryIannis.wav") if $Config{'osname'} eq "linux";
   # add others here if desired
+}
+
+sub abs {
+  my $value = shift @_;
+  if ($value < 0) {
+    return -$value;
+  }
+  else {
+    return $value;
+  }
+}
+
+sub probfunc {
+  my $clock = shift @_;
+  my $piecelength = shift @_;
+  return &abs($clock/$piecelength - 0.5) + 0.5;
 }
 
