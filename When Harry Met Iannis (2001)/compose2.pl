@@ -47,11 +47,11 @@ use Config; # used later when we play the output "wav" file
 $nidents = $#identlist + 1; # number of identities
 @chord = (-1, 1, 1, 1, 3, 5, 7, 9, 11); # initial chord
 $clock = 0; # current time
-$piecelength = 300; # how long is the piece?
+$piecelength = 240; # how long is the piece?
 $hioctave = 4; # upper octave boundary
 $looctave = 2; # lower octave boundary
 $hichord = $nidents; # maximum notes in a chord
-$lochord = 2; # minimum notes in a chord
+$lochord = 1; # minimum notes in a chord
 $basefreq = 392; # base frequency of 1/1
 
 # main loop
@@ -61,7 +61,7 @@ while (1) { # exit with "last" at end of piece
     $duration += 0; # force numeric
   }  
   else { # generate a duration at random
-    $duration = 2/8 + rand (6/8);
+    $duration = 4/16 + rand (12/16);
   }
   $probsound = &probfunc($clock, $piecelength);
   if (rand(1) < $probsound) { # are we sounding?
@@ -119,7 +119,7 @@ sub transform { # make a random transformation
   @idents = @_; # the Identities
 
   $majorcase = int (rand (4)); # major case number
-  #&OUSwitch if $majorcase == 0; # switch from O to U or vice versa
+  &OUSwitch if $majorcase == 0; # switch from O to U or vice versa
   &octave if $majorcase == 0; # switch from O to U or vice versa
   &octave if $majorcase == 1; # up or down an octave
   &nexus if $majorcase == 2; # pick a new Numerary Nexus

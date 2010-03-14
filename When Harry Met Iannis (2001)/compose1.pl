@@ -43,11 +43,11 @@ use Config; # used later when we play the output "wav" file
 &openLog; # open the log output file
 &openScore; # open the score output file
 &openDurations; # open the durations input file
-@identlist = (1, 3, 5, 7, 9); # list of identities
+@identlist = (1, 3, 5, 7, 9, 11); # list of identities
 $nidents = $#identlist + 1; # number of identities
-@chord = (1, 1, 1, 1, 3, 5, 7, 9); # initial chord
+@chord = (1, 1, 1, 1, 3, 5, 7, 9, 11); # initial chord
 $clock = 0; # current time
-$piecelength = 300; # how long is the piece?
+$piecelength = 240; # how long is the piece?
 $hioctave = 4; # upper octave boundary
 $looctave = 2; # lower octave boundary
 $hichord = $nidents; # maximum notes in a chord
@@ -61,7 +61,8 @@ while (1) { # exit with "last" at end of piece
     $duration += 0; # force numeric
   }  
   else { # generate a duration at random
-    $duration = 1/8 + rand (3/8);
+    #$duration = 1/8 + rand (3/8);
+    $duration = 3/16 + rand (9/16);
   }
   $probsound = &probfunc($clock, $piecelength);
   if (rand(1) < $probsound) { # are we sounding?
@@ -119,7 +120,7 @@ sub transform { # make a random transformation
   @idents = @_; # the Identities
 
   $majorcase = int (rand (4)); # major case number
-  #&OUSwitch if $majorcase == 0; # switch from O to U or vice versa
+  &OUSwitch if $majorcase == 0; # switch from O to U or vice versa
   &octave if $majorcase == 0; # switch from O to U or vice versa
   &octave if $majorcase == 1; # up or down an octave
   &nexus if $majorcase == 2; # pick a new Numerary Nexus
