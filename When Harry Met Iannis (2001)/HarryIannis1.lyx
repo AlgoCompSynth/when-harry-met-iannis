@@ -1,4 +1,4 @@
-#LyX 1.6.2 created this file. For more info see http://www.lyx.org/
+#LyX 1.6.5 created this file. For more info see http://www.lyx.org/
 \lyxformat 345
 \begin_document
 \begin_header
@@ -55,31 +55,25 @@ M.
 \end_layout
 
 \begin_layout BeginFrame
-Who Am I?
+The Story Behind “When Harry Met Iannis”
 \end_layout
 
-\begin_layout Itemize
-Mathematician / Computer Scientist
+\begin_layout Quotation
+Iannis Xenakis passed away on February 4, 2001.
+ When he arrived in Heaven, he sought out his mentor, Olivier Messiaen.
+ Messiaen said, “Iannis, there’s someone here I want you to meet.” The two
+ walked over to a small sidewalk cafe, and there sat Harry Partch.
 \end_layout
 
-\begin_layout Itemize
-Computer Performance Engineer
-\end_layout
-
-\begin_layout Itemize
-Studio Composer
-\end_layout
-
-\begin_layout Itemize
-Karaoke / Folk Singer
-\end_layout
-
-\begin_layout Itemize
-Actor 
-\end_layout
-
-\begin_layout Itemize
-Etc.
+\begin_layout Quotation
+And so from this fanciful meeting in Heaven, “When Harry Met Iannis” was
+ born.
+ From Partch, the piece inherits the 43-tone just scale, tuned to G = 392
+ Hz.
+ Also from Partch, the piece inherits the need to build instruments to play
+ in the Partch scale.
+ The harmonies in “When Harry Met Iannis” are derived from the Tonality
+ Diamond.
 \end_layout
 
 \begin_layout BeginFrame
@@ -190,6 +184,17 @@ Electronic instruments
 
 \begin_layout BeginFrame
 Tonality Diamond for “When Harry Met Iannis”
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Partchdiamond.svg
+	height 2.5in
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout BeginFrame
