@@ -1,5 +1,7 @@
 # When Harry Met Iannis
 
+[Hear the 2009 version on SoundCloud](https://soundcloud.com/znmeb/sets/when-harry-met-iannis-2009)
+
 Iannis Xenakis passed away on February 4, 2001. When he arrived in Heaven, he sought out his mentor, Olivier Messiaen. Messiaen said, “Iannis, there’s someone here I want you to meet.” The two walked over to a small sidewalk cafe, and there sat Harry Partch.
 
 And so from this fanciful meeting in Heaven, “When Harry Met Iannis” was born. From Partch, the piece inherits the 43-tone just scale, tuned to G = 392 Hz. Also from Partch, the piece inherits the need to build instruments to play in the Partch scale. The harmonies in “When Harry Met Iannis” are derived from the Tonality Diamond.
