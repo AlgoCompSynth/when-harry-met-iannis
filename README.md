@@ -19,6 +19,7 @@ Because some of these transitions can take the piece out of a practical performa
 
 Once the score has been computed, the piece is rendered. For this piece, I used a little-known digital synthesizer called sfront. Sfront is similar in principle to the much-better-known CSound digital synthesizer, but sfront code is vastly easier to read than CSound code. The synthesis consists of sung vowels with reverberation, and the position of the chord from left to right between the two stereo channels is chosen at random.
 
-Source code: https://gitlab.com/znmeb/when-harry-met-iannis/tree/master
-Partch - Genesis of a Music: www.amazon.com/Genesis-Music-Account-Creative-Fulfillments-ebook/dp/B00292BH9A/
-Xenakis - Formalized Music: www.amazon.com/Formalized-Music-Mathematics-Composition-Harmonologia/dp/1576470792/
+* Source code: https://gitlab.com/znmeb/when-harry-met-iannis/tree/master
+* Partch - Genesis of a Music: www.amazon.com/Genesis-Music-Account-Creative-Fulfillments-ebook/dp/B00292BH9A/
+* Xenakis - Formalized Music: www.amazon.com/Formalized-Music-Mathematics-Composition-Harmonologia/dp/1576470792/
+* sfront: https://7cd357df7360d90a26ff71a750f1b6b4fbe21522.googledrive.com/host/0B5KhJBq5lFz-S0FsRUNjSEZJSTg/sa/
