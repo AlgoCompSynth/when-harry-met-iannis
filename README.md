@@ -10,10 +10,10 @@ Now we have the harmonic structure – the Tonality Diamond. This is where Xenak
 
 The duration for each note is chosen at random. Whether the note is sounded or silent is chosen at random. And the progression of chords around the Tonality Diamond is chosen at random. At each transition, one of four chord transformations is chosen at random:
 
-    * The tonality can change from an Otonality to the corresponding Utonality or vice versa.
-    * The chord structure can stay the same but be shifted up or down an octave.
-    * A new Numerary Nexus can be chosen for the chord, with the rest of the structure remaining the same.
-    * An Odentity or Udentity can be added or deleted, with the rest of the structure remaining the same.
+* The tonality can change from an Otonality to the corresponding Utonality or vice versa.
+* The chord structure can stay the same but be shifted up or down an octave.
+* A new Numerary Nexus can be chosen for the chord, with the rest of the structure remaining the same.
+* An Odentity or Udentity can be added or deleted, with the rest of the structure remaining the same.
 
 Because some of these transitions can take the piece out of a practical performance range, if the piece goes out of range, the operation is reversed. For example, if the chosen transformation is to go up an octave and the resulting chord would be pitched too high, the next chord is instead chosen by going down one octave. If removing an Odentity or Udentity would leave an empty chord, one is added instead.
 
