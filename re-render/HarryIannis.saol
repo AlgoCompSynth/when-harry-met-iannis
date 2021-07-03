@@ -1,0 +1,196 @@
+
+// HarryIannis.saol
+// Based on "vowels.saol" and "vcsine.saol"
+// A simple singing synthesizer
+// Originally written by Eric Scheirer
+// Modified by John Lazzaro
+// Modified by Ed Borasky for "When Harry met Iannis"
+//
+// Changes (znmeb):
+//
+//    [1] use raw frequency instead of MIDI pitch numbers
+//    [2] changed "format" to "formant" :-)
+//    [3] added effects from "vcsine" tutorial
+//
+// Changes:
+//
+//    [1] "Fast" option uses table to replace buzz()
+//    [2] Variable tcount counts number of kcycles for a
+//        vowel transition -- previous implementation was prone
+//        to roundoff.
+//    [3] K-rate cpsmidi() opcode was part of a-rate statement in
+//        original, a strict decoder would not produce desired sound.
+//
+// This instrument should work as is in pre-FDIS saolc.
+
+global { 
+	srate 96000; 
+	krate 960; 
+
+	ksig bal; // position
+
+// routes all instances of voice1 to mixer
+//
+// ----------     ---------
+// |        |     |       |--> stereo
+// | voice1 |-->--| mixer |    audio 
+// |        |     |       |--> out
+// ----------     ---------
+
+	route (tonebus, voice1);
+	send (mixer; 1, 0.125; tonebus);
+	outchannels 2; // stereo
+} 
+
+instr voice1 (startpitch, startvwl, startamp) {
+	asig vibfreq, a, reson1, reson2, out; 
+	ksig kinit, f1, f2, curf1, curf2, ct, oldf1, oldf2, tcount; 
+	imports ksig vowel, amp, pitch, cpspitch, stop; 
+	table vib (harm, 128, 1); 
+	table buzztable (buzz, 128, 0, 1, 0.8);
+	ivar trans, ratio, fast; 
+	
+	ivar atime;   // attack time
+	ivar rtime;   // release time
+	ivar attack;  
+	ivar release;
+	ivar sustain;
+
+	ksig env;     // envelope multiplier
+
+	// i-rate
+
+	fast = 0;       // 1 chooses table implementation
+	trans = 0.100 ; // transition time between vowels, in seconds
+	ratio = 40;     // number of kcycles for a transition (16000/400) 
+
+	// envelope computation
+
+	atime = 0.3; // attack (sec)
+	rtime = 0.2; // decay (sec)
+
+	// envelope state
+
+	if (dur > atime + rtime) {
+		attack = atime;
+		release = rtime;
+		sustain = dur - atime - rtime;
+	}
+	else {
+		attack = dur/2;
+		release = dur/2;
+		sustain = 0;
+	}
+
+	// k-rate 
+ 
+	// computes envelope
+
+	env = kline (0, attack, 1, sustain, 1, release, 0); 
+
+	if (!kinit) { // initializes pitch/loudness/formant at note launch
+		kinit = 1; 
+		vowel = startvwl; 
+		amp = startamp; 
+		pitch = startpitch; 
+	} 
+	if (stop) { 
+		turnoff; 
+	} 
+	cpspitch = pitch; 
+
+	// calculate end-points of vowel formant
+	if (vowel == 1) { // /i/
+		f1 = 260; 
+		f2 = 2200; 
+	} 
+	if (vowel == 2) { // /u/
+		f1 = 310; 
+		f2 = 900; 
+	} 
+	if (vowel == 3) { // /a/
+		f1 = 750; 
+		f2 = 1100; 
+	} 
+	if (vowel == 4) { // /E/
+		f1 = 550; 
+		f2 = 1750; 
+	}
+	if (! oldf1) { // initialization for note startup
+		tcount = ratio;
+		oldf1 = f1; 
+		curf1 = f1; 
+		oldf2 = f2; 
+		curf2 = f2; 
+	} 
+	if (f1 != oldf1 || f2 != oldf2) {  // computes smooth formant shift
+		curf1 = oldf1 + ct / trans * (f1 - oldf1); 
+		curf2 = oldf2 + ct / trans * (f2 - oldf2); 
+		ct = ct + 1 / k_rate;
+		tcount = tcount - 1; 
+	} 
+	if (tcount == 0) {  // terminus of formant shift
+		ct = 0; 
+		oldf1 = f1; 
+		oldf2 = f2;
+		tcount = ratio; 
+	} 
+
+	// a-rate
+
+	// vibrato'd singing frequency
+	vibfreq = cpspitch*(oscil (vib, 5, -1)*0.020000 + 1)/2 + arand (5);
+	// vibfreq = cpspitch ;
+
+	if (!fast) { // computes raw glottal waveform
+		a = amp*buzz (vibfreq, 0, 1, 0.800000); 
+	}
+	else {
+		a = amp*oscil (buzztable, vibfreq); 
+	}
+
+	// apply resonances
+	// note bandpass is non-normative, will sound different with 
+	// different decoders
+	reson1 = bandpass (a, curf1, curf1/5.500000); 
+	reson2 = bandpass (a, curf2, curf2/5.500000) ; 
+
+	// blended final output
+	out = (a/4 + reson1 + reson2)/2; 
+	// output (out); 
+	output (env*out); 
+} 
+
+// instr mixer
+// adds reverb, panning
+
+instr mixer (rt60, wetdry) {
+
+	ivar wet, dry;
+	imports ksig bal;
+	ksig pos[2];
+	asig out[2];
+
+	// **********************
+	// computed during i-pass
+	// **********************
+
+	wet = wetdry;
+	dry = 1 - wetdry;
+
+	// **********************
+	// computed during k-pass
+	// **********************
+
+	pos[0] = dry*(1 - bal);
+	pos[1] = dry*(bal);
+
+	// **********************
+	// computed during a-pass
+	// **********************
+
+	out = pos*input + wet*reverb (input[0], rt60); 
+
+	output (out);
+}
+
