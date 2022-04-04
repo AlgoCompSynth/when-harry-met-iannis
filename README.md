@@ -1,6 +1,6 @@
 # When Harry Met Iannis
 
-[Hear the 2009 version on SoundCloud](https://soundcloud.com/znmeb/sets/when-harry-met-iannis-2009)
+[Hear on Bandcamp](https://algocompsynth.bandcamp.com/album/when-harry-met-iannis)
 
 Iannis Xenakis passed away on February 4, 2001. When he arrived in Heaven, he sought out his mentor, Olivier Messiaen. Messiaen said, “Iannis, there’s someone here I want you to meet.” The two walked over to a small sidewalk cafe, and there sat Harry Partch.
 
