@@ -13,6 +13,12 @@
    This script lived in a private repository with
    that name until 2025-08-08.
 
+   Previous version of "When Harry Met Iannis":
+   https://algocompsynth.bandcamp.com/album/when-harry-met-iannis
+
+   This file:
+   
+
 */
 
 // This part is mostly copied from the refactored script
